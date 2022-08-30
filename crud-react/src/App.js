@@ -11,8 +11,7 @@ function App() {
       <nav className="navbar navbar-expand navbar-light bg-light  ">
           <div className="nav navbar-nav">
               <Link className="nav-item nav-link active" to={"/"}>System <span class="sr-only">()</span></Link>
-              <Link className="nav-item nav-link" to={"/register.html"}>Register</Link>
-              <a href='register.html'>Register</a>
+          
               <Link className="nav-item nav-link" to={"/liste"}>List all songs</Link>
               <Link className="nav-item nav-link" to={"/create"}>Register a song</Link>
              
