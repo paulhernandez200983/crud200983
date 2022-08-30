@@ -28,7 +28,7 @@ class create extends React.Component {
     var datatosend = {SONG_TITLE:SONG_TITLE, SONGWRITER:SONGWRITER, YEARPUB:YEARPUB, RECORD_COMPANY: RECORD_COMPANY, GENRE: GENRE, MEDIA:MEDIA}
 
 
-    fetch(api+"?insertar=1",{
+    fetch(api+"\src\create\"+"?insertar=1",{
          method:"POST",
          body:JSON.stringify(datatosend)
 
