@@ -6,15 +6,15 @@ header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // Conecta a la base de datos  con usuario, contraseña y nombre de la BD
-$servidor = "127.0.0.1"; $usuario = "root"; $contrasenia = ""; $nombreBaseDatos = "songs";
+$servidor = "127.0.0.1"; $usuario = "id19486507_pol200983"; $contrasenia = "ZZ|mci3Cp7]r!Zm4"; $nombreBaseDatos = "id19486507_songs";
 $conexionBD = new mysqli($servidor, $usuario, $contrasenia, $nombreBaseDatos);
 
 
 // Consulta datos y recepciona una clave para consultar dichos datos con dicha clave
 if (isset($_GET["consultar"])){
-    $sqlsongs = mysqli_query($conexionBD,"SELECT * FROM registered_songs WHERE id=".$_GET["consultar"]);
-    if(mysqli_num_rows($sqlsongs) > 0){
-        $registered_songs = mysqli_fetch_all($sqlsongs,MYSQLI_ASSOC);
+    $sqlid19486507_songs = mysqli_query($conexionBD,"SELECT * FROM registered_songs WHERE id=".$_GET["consultar"]);
+    if(mysqli_num_rows($sqlid19486507_songs) > 0){
+        $registered_songs = mysqli_fetch_all($sqlid19486507_songs,MYSQLI_ASSOC);
         echo json_encode($registered_songs);
         exit();
     }
@@ -22,8 +22,8 @@ if (isset($_GET["consultar"])){
 }
 //borrar pero se le debe de enviar una clave ( para borrado )
 if (isset($_GET["borrar"])){
-    $sqlsongs = mysqli_query($conexionBD,"DELETE FROM registered_songs WHERE id=".$_GET["borrar"]);
-    if($sqlsongs){
+    $sqlid19486507_songs= mysqli_query($conexionBD,"DELETE FROM registered_songs WHERE id=".$_GET["borrar"]);
+    if($sqlid19486507_songs){
         echo json_encode(["success"=>1]);
         exit();
     }
@@ -40,7 +40,7 @@ if(isset($_GET["insertar"])){
     $MEDIA=$data->MEDIA;
        // if(($SONGWRITER!="")&&($SONG_TITLE!="")&&($YEARPUB!="")&&($RECORD_COMPANY!="")&&($GENRE!="")&&($MEDIA!="")){
             
-    $sqlsongs = mysqli_query($conexionBD,"INSERT INTO registered_songs(SONG_TITLE,SONGWRITER, YEARPUB, RECORD_COMPANY, GENRE, MEDIA) VALUES('$SONG_TITLE','$SONGWRITER', '$YEARPUB', '$RECORD_COMPANY', '$GENRE', '$MEDIA') ");
+    $sqlid19486507_songs = mysqli_query($conexionBD,"INSERT INTO registered_songs(SONG_TITLE,SONGWRITER, YEARPUB, RECORD_COMPANY, GENRE, MEDIA) VALUES('$SONG_TITLE','$SONGWRITER', '$YEARPUB', '$RECORD_COMPANY', '$GENRE', '$MEDIA') ");
     echo json_encode(["success"=>1]);
        // }
     exit();
@@ -59,17 +59,17 @@ if(isset($_GET["actualizar"])){
     $GENRE=$data->GENRE;
     $MEDIA=$data->MEDIA;
     
-    $sqlsongs = mysqli_query($conexionBD,"UPDATE registered_songs SET SONG_TITLE ='$SONG_TITLE',SONGWRITER = '$SONGWRITER' , 
+    $sqlid19486507_songs = mysqli_query($conexionBD,"UPDATE registered_songs SET SONG_TITLE ='$SONG_TITLE',SONGWRITER = '$SONGWRITER' , 
     YEARPUB = '$YEARPUB', RECORD_COMPANY = '$RECORD_COMPANY',
      GENRE = '$GENRE', MEDIA = '$MEDIA' WHERE id='$id' ");
     echo json_encode(["success"=>1]);
     exit();
 }
 // Consulta todos los registros de la tabla empleados
-$sqlsongs = mysqli_query($conexionBD,"SELECT * FROM registered_songs ");
-if(mysqli_num_rows($sqlsongs) > 0){
-    $songs = mysqli_fetch_all($sqlsongs,MYSQLI_ASSOC);
-    echo json_encode($songs);
+$sqlid19486507_songs= mysqli_query($conexionBD,"SELECT * FROM registered_songs ");
+if(mysqli_num_rows($sqlid19486507_songs) > 0){
+    $id19486507_songs = mysqli_fetch_all($sqlid19486507_songs,MYSQLI_ASSOC);
+    echo json_encode($id19486507_songs);
 }
 else{ echo json_encode([["success"=>0]]); }
 
