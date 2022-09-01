@@ -26,7 +26,11 @@ class create extends React.Component {
     console.log(MEDIA);
      
     var datatosend = {SONG_TITLE:SONG_TITLE, SONGWRITER:SONGWRITER, YEARPUB:YEARPUB, RECORD_COMPANY: RECORD_COMPANY, GENRE: GENRE, MEDIA:MEDIA}
-
+app.UseCors(x => x
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .SetIsOriginAllowed(origin => true) // allow any origin
+                    .AllowCredentials())
 
     fetch(api+"?insertar=1",{
          method:"POST",
