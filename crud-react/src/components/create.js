@@ -30,6 +30,7 @@ class create extends React.Component {
 
     fetch(api+"?insertar=1",{
          method:"POST",
+        mode: 'cors',
          body:JSON.stringify(datatosend)
 
     }
