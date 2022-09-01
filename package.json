@@ -8,7 +8,7 @@
         "node": "6.9.0"
       },
   "scripts":{
-    "start": "react-scripts start",
+    "start": "node App.js",
   },
   "packages": {
     "node_modules/@babel/runtime": {
