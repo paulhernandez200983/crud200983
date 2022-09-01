@@ -7,6 +7,9 @@
    "engines": {
         "node": "6.9.0"
       },
+  "scripts":{
+    "start": "react-scripts start",
+  },
   "packages": {
     "node_modules/@babel/runtime": {
       "version": "7.18.9",
